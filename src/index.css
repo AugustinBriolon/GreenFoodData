@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('/fonts/Nunito.ttf');
+}
+
+@font-face {
+  font-family: 'Nunito-Italic';
+  src: url('/fonts/Nunito-Italic.ttf');
+}
+
+@font-face {
+  font-family: 'YoungSerif';
+  src: url('/fonts/YoungSerif.ttf');
+}
+
+h1 {
+  font-family: YoungSerif;
+}
+
+h2,
+h4,
+h5,
+h6,
+p,
+a,
+button,
+input,
+textarea {
+  font-family: Nunito;
+}
+
+h3 {
+  font-family: Nunito-Italic;
+}
+
+.noscrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
