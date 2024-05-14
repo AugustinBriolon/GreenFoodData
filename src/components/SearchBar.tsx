@@ -37,7 +37,7 @@ export default function SearchBar({ data, setData }: { data: Data[], setData: (f
           name="Rechercher"
           onChange={handleSearch}
           value={inputValue}
-          placeholder="Rechercher un aliment..."
+          placeholder="Rechercher un aliment"
         />
       </div>
     </div>

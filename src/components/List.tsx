@@ -1,16 +1,24 @@
 import clsx from "clsx"
-
-import { Data } from "../types"
-import { ListSkeleton } from "./Skeleton"
 import { Badge } from "@radix-ui/themes"
 
-export default function List({ data, portion }: { data: Data[], portion: number }) {
+import { ListProps, Data } from "../types"
+import { ListSkeleton } from "./Skeleton"
 
-  const proportionWithPortion = (value: number) => {   
+export default function List({ data, portion, selectedData, setSelectedData }: ListProps) {
+
+  const proportionWithPortion = (value: number) => {
     if (Number.isNaN(portion)) {
       return 0;
     } else {
       return ((value * portion) / 100).toFixed(1)
+    }
+  }
+
+  const handleSelectData = (food: Data) => {
+    if (selectedData.includes(food)) {
+      setSelectedData(selectedData.filter((selected) => selected !== food))
+    } else {
+      setSelectedData([...selectedData, food])
     }
   }
 
@@ -51,23 +59,29 @@ export default function List({ data, portion }: { data: Data[], portion: number 
         </div>
 
         <div className="h-fit">
-          {data.map((food, index) => (
-            <div key={index} className="min-w-mille w-max md:w-auto grid grid-cols-md-list lg:grid-cols-list py-4 border-b border-solid border-gray-200 hover:bg-green-50 items-center justify-between gap-4 text-sm last:border-b-0">
-              <div className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  className="accent-green-600 hover:accent-green-700 ml-2"
-                />
-                <p className="text-sm text-green-800 font-bold">{food.name}</p>
-              </div>
-              <Badge color={food.category === "Fruits" ? "ruby" : "grass"} className="text-sm w-fit font-normal">{food.category}</Badge>
-              <p className={clsx("text-sm text-green-800 font-bold  flex gap-1", food.calories > 100 ? "text-red-500" : "text-green-800")}>  <span className="block truncate max-w-20">{proportionWithPortion(food.calories)}</span> kcal</p>
+          {data.length === 0 ? (
+            <p className="text-center text-gray-500 py-4">Aucun aliment ne correspond à la recherche</p>
+          ) : (
+            data.map((food, index) => (
+              <div key={index} className={clsx("min-w-mille w-max md:w-auto grid grid-cols-md-list lg:grid-cols-list py-4 border-b border-solid border-gray-200 hover:bg-green-50 items-center justify-between gap-4 text-sm last:border-b-0", selectedData.includes(food) && "bg-green-50")} onClick={() => handleSelectData(food)}>
+                <div className="flex items-center justify-start gap-2">
+                  <input
+                    type="checkbox"
+                    className="accent-green-600 hover:accent-green-700 ml-2"
+                    checked={selectedData.includes(food)}
+                    onChange={() => handleSelectData(food)}
+                  />
+                  <p className="text-sm text-green-800 font-bold">{food.name}</p>
+                </div>
+                <Badge color={food.category === "Fruits" ? "ruby" : "grass"} className="text-sm w-fit font-normal">{food.category}</Badge>
+                <p className={clsx("text-sm text-green-800 font-bold  flex gap-1", food.calories > 100 ? "text-red-500" : "text-green-800")}>  <span className="block truncate max-w-20">{proportionWithPortion(food.calories)}</span> kcal</p>
 
-              <p className="text-sm text-green-800 flex gap-1"> <span className="block truncate max-w-15"> {proportionWithPortion(food.carbohydrates)}</span> g</p>
-              <p className="text-sm text-green-800 flex gap-1"> <span className="block truncate max-w-15"> {proportionWithPortion(food.proteins)}</span> g</p>
-              <p className="text-sm text-green-800 flex gap-1"> <span className="block truncate max-w-15"> {proportionWithPortion(food.lipids)}</span> g</p>
-            </div>
-          ))}
+                <p className="text-sm text-green-800 flex gap-1"> <span className="block truncate max-w-15"> {proportionWithPortion(food.carbohydrates)}</span> g</p>
+                <p className="text-sm text-green-800 flex gap-1"> <span className="block truncate max-w-15"> {proportionWithPortion(food.proteins)}</span> g</p>
+                <p className="text-sm text-green-800 flex gap-1"> <span className="block truncate max-w-15"> {proportionWithPortion(food.lipids)}</span> g</p>
+              </div>
+            ))
+          )}
         </div>
       </div>
     </div>

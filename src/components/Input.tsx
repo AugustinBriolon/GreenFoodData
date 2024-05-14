@@ -26,6 +26,7 @@ export default function Input({ type, value, onChange, min, max }: { type: strin
         onChange={onChange}
         min={min}
         max={max}
+        pattern={type === 'number' ? '[0-9]*' : undefined}
       />
       <span className='text-4xl overflow-hidden invisible h-0 absolute whitespace-pre' ref={measureRef}>
         {value || ""}

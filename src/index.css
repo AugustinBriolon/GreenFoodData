@@ -17,11 +17,11 @@
   src: url('/fonts/YoungSerif.ttf');
 }
 
-h1 {
+h1,
+h2 {
   font-family: YoungSerif;
 }
 
-h2,
 h4,
 h5,
 h6,
@@ -51,4 +51,3 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
-
