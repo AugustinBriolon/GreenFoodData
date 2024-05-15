@@ -7,6 +7,15 @@ export interface Data {
   lipids: number
 }
 
+export interface InputProps {
+  type: string
+  value: number
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  textSize: string
+  min?: number
+  max?: number
+}
+
 export interface ListProps {
   data: Data[];
   portion: number;
@@ -17,6 +26,7 @@ export interface ListProps {
 export interface ModalType {
   isOpen: boolean;
   toggle: () => void;
+  data: Data[];
   selectedData: Data[];
   setSelectedData: (data: Data[]) => void;
 }

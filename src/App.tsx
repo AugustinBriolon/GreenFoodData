@@ -30,7 +30,7 @@ export default function App() {
         <div className='flex items-end justify-end w-fit gap-2'>
           <p>Pour</p>
           <div className='flex items-end justify-end gap-1 border-b border-solid border-green-800'>
-            <Input type='number' value={portion} onChange={(e) => setPortion(parseInt(e.target.value))} min={0} max={1000} />
+            <Input type='number' value={portion} onChange={(e) => setPortion(parseInt(e.target.value))} min={0} max={1000} textSize='text-4xl' />
             <p>g</p>
           </div>
         </div>
@@ -44,7 +44,7 @@ export default function App() {
         </div>
       </div>
       <List data={data} portion={portion} selectedData={selectedData}  setSelectedData={setSelectedData} />
-      <Modal isOpen={modal} toggle={() => setModal(!modal)} selectedData={selectedData} setSelectedData={setSelectedData}/>
+      <Modal isOpen={modal} toggle={() => setModal(!modal)} data={data} selectedData={selectedData} setSelectedData={setSelectedData}/>
     </div>
   );
 }
