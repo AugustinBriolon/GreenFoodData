@@ -1,31 +1,26 @@
-import clsx from "clsx"
-import { Badge } from "@radix-ui/themes"
-
-import { ListProps, Data } from "../types"
-import { ListSkeleton } from "./Skeleton"
+// List.tsx
+import clsx from "clsx";
+import { Badge } from "@radix-ui/themes";
+import { ListProps, Data, SelectedData } from "../types";
+import { ListSkeleton } from "./Skeleton";
+import { getColor } from "../utils/getColor";
+import { getProportion } from "../utils/getProportion";
 
 export default function List({ data, portion, selectedData, setSelectedData }: ListProps) {
 
-  const proportionWithPortion = (value: number) => {
-    if (Number.isNaN(portion)) {
-      return 0;
-    } else {
-      return ((value * portion) / 100).toFixed(1)
-    }
-  }
-
   const handleSelectData = (food: Data) => {
-    if (selectedData.includes(food)) {
-      setSelectedData(selectedData.filter((selected) => selected !== food))
+    const existingItemIndex = selectedData.findIndex(item => item.food === food);
+    if (existingItemIndex !== -1) {
+      // Remove the item if it's already selected
+      setSelectedData(selectedData.filter((_, index) => index !== existingItemIndex));
     } else {
-      setSelectedData([...selectedData, food])
+      // Add the item with the portion
+      setSelectedData([...selectedData, { food, portion }]);
     }
-  }
+  };
 
   if (!data) {
-    return (
-      <ListSkeleton />
-    )
+    return <ListSkeleton />;
   }
 
   return (
@@ -35,7 +30,7 @@ export default function List({ data, portion, selectedData, setSelectedData }: L
           <div className="flex gap-2">
             <input
               type="checkbox"
-              className="accent-green-600 hover:accent-grenn-700 ml-2"
+              className="accent-green-600 hover:accent-green-700 ml-2"
             />
             <p className="flex items-center gap-2 text-xs font-bold select-none py-2 text-white uppercase">
               Nom
@@ -62,28 +57,39 @@ export default function List({ data, portion, selectedData, setSelectedData }: L
           {data.length === 0 ? (
             <p className="text-center text-gray-500 py-4">Aucun aliment ne correspond à la recherche</p>
           ) : (
-            data.map((food, index) => (
-              <div key={index} className={clsx("sm:min-w-mille w-max md:w-auto grid grid-cols-md-list lg:grid-cols-list py-4 border-b border-solid border-gray-200 hover:bg-green-50 items-center justify-between gap-4 text-sm last:border-b-0", selectedData.includes(food) && "bg-green-50")} onClick={() => handleSelectData(food)}>
-                <div className="flex items-center justify-start gap-2">
-                  <input
-                    type="checkbox"
-                    className="accent-green-600 hover:accent-green-700 ml-2"
-                    checked={selectedData.includes(food)}
-                    onChange={() => handleSelectData(food)}
-                  />
-                  <p className="text-sm text-green-800 font-bold">{food.name}</p>
+            data.map((food, index) => {
+              const isSelected = selectedData.some(item => item.food === food);
+              return (
+                <div
+                  key={index}
+                  className={clsx(
+                    "select-none sm:min-w-mille w-max md:w-auto grid grid-cols-md-list lg:grid-cols-list py-4 border-b border-solid border-gray-200 hover:bg-green-50 items-center justify-between gap-4 text-sm last:border-b-0",
+                    isSelected && "bg-green-50"
+                  )}
+                  onClick={() => handleSelectData(food)}
+                >
+                  <div className="flex items-center justify-start gap-2">
+                    <input
+                      type="checkbox"
+                      className="accent-green-800 hover:accent-green-900 ml-2"
+                      checked={isSelected}
+                      onChange={() => handleSelectData(food)}
+                    />
+                    <p className="text-sm text-green-800 font-bold">{food.name}</p>
+                  </div>
+                  <Badge color={getColor(food.category)} className="text-sm w-fit font-normal" highContrast>{food.category}</Badge>
+                  <p className={clsx("text-sm text-green-800 font-bold flex gap-1", food.calories > 100 ? "text-red-500" : "text-green-800")}>
+                    <span className="block truncate max-w-20">{getProportion(food.calories, portion)}</span> kcal
+                  </p>
+                  <p className="text-sm text-green-800 flex gap-1"><span className="block truncate max-w-15">{getProportion(food.carbohydrates, portion)}</span> g</p>
+                  <p className="text-sm text-green-800 flex gap-1"><span className="block truncate max-w-15">{getProportion(food.proteins, portion)}</span> g</p>
+                  <p className="text-sm text-green-800 flex gap-1"><span className="block truncate max-w-15">{getProportion(food.lipids, portion)}</span> g</p>
                 </div>
-                <Badge color={food.category === "Fruits" ? "ruby" : "grass"} className="text-sm w-fit font-normal">{food.category}</Badge>
-                <p className={clsx("text-sm text-green-800 font-bold  flex gap-1", food.calories > 100 ? "text-red-500" : "text-green-800")}>  <span className="block truncate max-w-20">{proportionWithPortion(food.calories)}</span> kcal</p>
-
-                <p className="text-sm text-green-800 flex gap-1"> <span className="block truncate max-w-15"> {proportionWithPortion(food.carbohydrates)}</span> g</p>
-                <p className="text-sm text-green-800 flex gap-1"> <span className="block truncate max-w-15"> {proportionWithPortion(food.proteins)}</span> g</p>
-                <p className="text-sm text-green-800 flex gap-1"> <span className="block truncate max-w-15"> {proportionWithPortion(food.lipids)}</span> g</p>
-              </div>
-            ))
+              );
+            })
           )}
         </div>
       </div>
     </div>
-  )
+  );
 }

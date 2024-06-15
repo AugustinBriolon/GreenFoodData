@@ -1,0 +1,218 @@
+[
+  {
+    "name": "Poulet",
+    "category": "Viande",
+    "calories": 165,
+    "carbohydrates": 0,
+    "proteins": 31,
+    "lipids": 3.6
+  },
+  {
+    "name": "Boeuf",
+    "category": "Viande",
+    "calories": 250,
+    "carbohydrates": 0,
+    "proteins": 26,
+    "lipids": 15
+  },
+  {
+    "name": "Porc",
+    "category": "Viande",
+    "calories": 242,
+    "carbohydrates": 0,
+    "proteins": 27,
+    "lipids": 14
+  },
+  {
+    "name": "Agneau",
+    "category": "Viande",
+    "calories": 294,
+    "carbohydrates": 0,
+    "proteins": 25,
+    "lipids": 21
+  },
+  {
+    "name": "Saumon",
+    "category": "Poisson",
+    "calories": 206,
+    "carbohydrates": 0,
+    "proteins": 22,
+    "lipids": 13
+  },
+  {
+    "name": "Thon",
+    "category": "Poisson",
+    "calories": 132,
+    "carbohydrates": 0,
+    "proteins": 28,
+    "lipids": 1.3
+  },
+  {
+    "name": "Crevettes",
+    "category": "Fruits de Mer",
+    "calories": 99,
+    "carbohydrates": 0.2,
+    "proteins": 24,
+    "lipids": 0.3
+  },
+  {
+    "name": "Homard",
+    "category": "Fruits de Mer",
+    "calories": 77,
+    "carbohydrates": 0,
+    "proteins": 16,
+    "lipids": 0.7
+  },
+  {
+    "name": "Canard",
+    "category": "Viande",
+    "calories": 337,
+    "carbohydrates": 0,
+    "proteins": 19,
+    "lipids": 28
+  },
+  {
+    "name": "Dinde",
+    "category": "Viande",
+    "calories": 189,
+    "carbohydrates": 0,
+    "proteins": 29,
+    "lipids": 7
+  },
+  {
+    "name": "Cabillaud",
+    "category": "Poisson",
+    "calories": 82,
+    "carbohydrates": 0,
+    "proteins": 18,
+    "lipids": 0.7
+  },
+  {
+    "name": "Saumon Fumé",
+    "category": "Poisson",
+    "calories": 117,
+    "carbohydrates": 0,
+    "proteins": 18,
+    "lipids": 4
+  },
+  {
+    "name": "Crabe",
+    "category": "Fruits de Mer",
+    "calories": 83,
+    "carbohydrates": 0,
+    "proteins": 18,
+    "lipids": 0.8
+  },
+  {
+    "name": "Huitres",
+    "category": "Fruits de Mer",
+    "calories": 68,
+    "carbohydrates": 4,
+    "proteins": 7,
+    "lipids": 2
+  },
+  {
+    "name": "Sardines",
+    "category": "Poisson",
+    "calories": 208,
+    "carbohydrates": 0,
+    "proteins": 25,
+    "lipids": 11
+  },
+  {
+    "name": "Calmars",
+    "category": "Fruits de Mer",
+    "calories": 92,
+    "carbohydrates": 3.1,
+    "proteins": 15.6,
+    "lipids": 1.4
+  },
+  {
+    "name": "Anguille",
+    "category": "Poisson",
+    "calories": 184,
+    "carbohydrates": 0,
+    "proteins": 18.4,
+    "lipids": 11.6
+  },
+  {
+    "name": "Truite",
+    "category": "Poisson",
+    "calories": 148,
+    "carbohydrates": 0,
+    "proteins": 20,
+    "lipids": 7
+  },
+  {
+    "name": "Coquilles Saint-Jacques",
+    "category": "Fruits de Mer",
+    "calories": 111,
+    "carbohydrates": 5.4,
+    "proteins": 20.5,
+    "lipids": 0.8
+  },
+  {
+    "name": "Pétoncles",
+    "category": "Fruits de Mer",
+    "calories": 88,
+    "carbohydrates": 3.2,
+    "proteins": 15.7,
+    "lipids": 0.7
+  },
+  {
+    "name": "Veau",
+    "category": "Viande",
+    "calories": 172,
+    "carbohydrates": 0,
+    "proteins": 24,
+    "lipids": 7.4
+  },
+  {
+    "name": "Lapin",
+    "category": "Viande",
+    "calories": 173,
+    "carbohydrates": 0,
+    "proteins": 33,
+    "lipids": 3.5
+  },
+  {
+    "name": "Tilapia",
+    "category": "Poisson",
+    "calories": 96,
+    "carbohydrates": 0,
+    "proteins": 20.1,
+    "lipids": 1.7
+  },
+  {
+    "name": "Flétan",
+    "category": "Poisson",
+    "calories": 186,
+    "carbohydrates": 0,
+    "proteins": 20.2,
+    "lipids": 11.9
+  },
+  {
+    "name": "Espadon",
+    "category": "Poisson",
+    "calories": 144,
+    "carbohydrates": 0,
+    "proteins": 23.6,
+    "lipids": 4.4
+  },
+  {
+    "name": "Poulpe",
+    "category": "Fruits de Mer",
+    "calories": 82,
+    "carbohydrates": 2.2,
+    "proteins": 15,
+    "lipids": 1
+  },
+  {
+    "name": "Huîtres de roche",
+    "category": "Fruits de Mer",
+    "calories": 50,
+    "carbohydrates": 2.5,
+    "proteins": 5.3,
+    "lipids": 1.3
+  }
+]

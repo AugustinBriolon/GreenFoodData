@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Lait",
+    "category": "Prod. Laitier",
+    "calories": 42,
+    "carbohydrates": 5,
+    "proteins": 3.4,
+    "lipids": 1
+  },
+  {
+    "name": "Yaourt",
+    "category": "Prod. Laitier",
+    "calories": 59,
+    "carbohydrates": 3.6,
+    "proteins": 10,
+    "lipids": 0.4
+  },
+  {
+    "name": "Crème",
+    "category": "Prod. Laitier",
+    "calories": 196,
+    "carbohydrates": 3.7,
+    "proteins": 2.7,
+    "lipids": 19
+  },
+  {
+    "name": "Beurre",
+    "category": "Prod. Laitier",
+    "calories": 200,
+    "carbohydrates": 0.1,
+    "proteins": 0.5,
+    "lipids": 20
+  },
+  {
+    "name": "Cheddar",
+    "category": "Prod. Laitier",
+    "calories": 403,
+    "carbohydrates": 1.3,
+    "proteins": 24,
+    "lipids": 33
+  },
+  {
+    "name": "Fromage Cottage",
+    "category": "Prod. Laitier",
+    "calories": 98,
+    "carbohydrates": 3.4,
+    "proteins": 11,
+    "lipids": 4.3
+  },
+  {
+    "name": "Yaourt Grec",
+    "category": "Prod. Laitier",
+    "calories": 59,
+    "carbohydrates": 3.6,
+    "proteins": 10,
+    "lipids": 0.4
+  },
+  {
+    "name": "Crème Aigre",
+    "category": "Prod. Laitier",
+    "calories": 193,
+    "carbohydrates": 4.6,
+    "proteins": 2.1,
+    "lipids": 20
+  },
+  {
+    "name": "Parmesan",
+    "category": "Prod. Laitier",
+    "calories": 431,
+    "carbohydrates": 4.1,
+    "proteins": 38,
+    "lipids": 29
+  },
+  {
+    "name": "Brie",
+    "category": "Prod. Laitier",
+    "calories": 334,
+    "carbohydrates": 0.5,
+    "proteins": 21,
+    "lipids": 28
+  },
+  {
+    "name": "Ricotta",
+    "category": "Prod. Laitier",
+    "calories": 174,
+    "carbohydrates": 3,
+    "proteins": 11,
+    "lipids": 13
+  },
+  {
+    "name": "Mozzarella",
+    "category": "Prod. Laitier",
+    "calories": 280,
+    "carbohydrates": 3.1,
+    "proteins": 28,
+    "lipids": 17
+  },
+  {
+    "name": "Emmental",
+    "category": "Prod. Laitier",
+    "calories": 380,
+    "carbohydrates": 1.4,
+    "proteins": 27,
+    "lipids": 28
+  },
+  {
+    "name": "Fromage Bleu",
+    "category": "Prod. Laitier",
+    "calories": 353,
+    "carbohydrates": 2.3,
+    "proteins": 21,
+    "lipids": 28
+  }
+]

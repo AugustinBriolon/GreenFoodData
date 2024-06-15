@@ -12,6 +12,7 @@ export default {
       gridTemplateColumns: {
         "list": "200px 125px 100px 100px 100px 100px",
         "md-list": "200px 125px 100px 100px 100px 100px",
+        // "cardElement": ""
       },
       minWidth: {
         mille: "1000px",

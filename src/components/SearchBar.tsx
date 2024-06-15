@@ -16,7 +16,6 @@ export default function SearchBar({ data, setData }: { data: Data[], setData: (f
       const filteredData = data.filter(food =>
         regex.test(food.name) || regex.test(food.category)
       );
-
       setData(filteredData);
     }
   };
